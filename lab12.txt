@@ -1,0 +1,347 @@
+1.  student@ubuntu:~/Desktop/chahla/lab12$ git clone https://github.com/u-boot/u-boot
+2. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ git checkout v2018.05
+Note: checking out 'v2018.05'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 890e79f2b1 Prepare v2018.05
+
+3.
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ git branch 
+* (HEAD detached at v2018.05)
+  master
+4.  
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ ls .config
+ls: cannot access '.config': No such file or directory
+
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ cd configs
+student@ubuntu:~/Desktop/chahla/lab12/u-boot/configs$ ls
+
+student@ubuntu:~/Desktop/chahla/lab12/u-boot/configs$ ls * | grep beagle
+omap3_beagle_defconfig
+
+
+
+5.
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ make omap3_beagle_defconfig
+
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ ls .config
+.config
+
+CONFIG_SYS_PROMPT="kadi -uboot=> "
+
+6. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ make
+
+
+
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ ls
+api        Documentation  lib          snapshot.commit     u-boot.dtb
+arch       drivers        Licenses     spl                 u-boot-dtb.bin
+board      dts            MAINTAINERS  System.map          u-boot-dtb.img
+cmd        env            Makefile     test                u-boot.img
+common     examples       MLO          tools               u-boot.lds
+config.mk  fs             net          u-boot              u-boot.map
+configs    include        post         u-boot.bin          u-boot-nodtb.bin
+disk       Kbuild         README       u-boot.cfg          u-boot.srec
+doc        Kconfig        scripts      u-boot.cfg.configs  u-boot.sym
+
+7. 
+8. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=4038532k,nr_inodes=1009633,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=812492k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/unified type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/rdma type cgroup (rw,nosuid,nodev,noexec,relatime,rdma)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=25677)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+/var/lib/snapd/snaps/core_10185.snap on /snap/core/10185 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-characters_296.snap on /snap/gnome-characters/296 type squashfs (ro,nodev,relatime,x-gdu.hide)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/var/lib/snapd/snaps/gnome-3-34-1804_60.snap on /snap/gnome-3-34-1804/60 type squashfs (ro,nodev,relatime,x-gdu.hide)
+vmware-vmblock on /run/vmblock-fuse type fuse.vmware-vmblock (rw,relatime,user_id=0,group_id=0,default_permissions,allow_other)
+/var/lib/snapd/snaps/gnome-system-monitor_148.snap on /snap/gnome-system-monitor/148 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-28-1804_145.snap on /snap/gnome-3-28-1804/145 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-calculator_826.snap on /snap/gnome-calculator/826 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-28-1804_128.snap on /snap/gnome-3-28-1804/128 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core18_1885.snap on /snap/core18/1885 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core_9993.snap on /snap/core/9993 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-characters_570.snap on /snap/gnome-characters/570 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core18_1932.snap on /snap/core18/1932 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-logs_61.snap on /snap/gnome-logs/61 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-34-1804_36.snap on /snap/gnome-3-34-1804/36 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-logs_100.snap on /snap/gnome-logs/100 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-calculator_406.snap on /snap/gnome-calculator/406 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gtk-common-themes_1506.snap on /snap/gtk-common-themes/1506 type squashfs (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-system-monitor_100.snap on /snap/gnome-system-monitor/100 type squashfs (ro,nodev,relatime,x-gdu.hide)
+tmpfs on /run/user/121 type tmpfs (rw,nosuid,nodev,relatime,size=812488k,mode=700,uid=121,gid=125)
+/var/lib/snapd/snaps/gtk-common-themes_1514.snap on /snap/gtk-common-themes/1514 type squashfs (ro,nodev,relatime,x-gdu.hide)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=812488k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/sdb1 on /media/student/boot type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
+
+9. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ sudo fdisk -l
+
+###################
+
+[sudo] password for student: 
+Disk /dev/loop0: 97.8 MiB, 102486016 bytes, 200168 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 217.9 MiB, 228478976 bytes, 446248 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop2: 14.8 MiB, 15462400 bytes, 30200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+Disk /dev/loop3: 162.9 MiB, 170778624 bytes, 333552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop4: 2.2 MiB, 2273280 bytes, 4440 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop6: 2.5 MiB, 2600960 bytes, 5080 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop7: 161.4 MiB, 169254912 bytes, 330576 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+Disk /dev/sda: 20 GiB, 21474836480 bytes, 41943040 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xf872cd47
+
+Device     Boot Start      End  Sectors Size Id Type
+/dev/sda1  *     2048 41940991 41938944  20G 83 Linux
+
+
+Disk /dev/loop8: 55.3 MiB, 58007552 bytes, 113296 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop9: 97.1 MiB, 101777408 bytes, 198784 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop10: 276 KiB, 282624 bytes, 552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop11: 55.4 MiB, 58052608 bytes, 113384 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop12: 1008 KiB, 1032192 bytes, 2016 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop13: 255.6 MiB, 267980800 bytes, 523400 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop14: 956 KiB, 978944 bytes, 1912 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop15: 4 MiB, 4218880 bytes, 8240 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop16: 62.1 MiB, 65105920 bytes, 127160 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop17: 3.7 MiB, 3825664 bytes, 7472 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop18: 64.8 MiB, 67915776 bytes, 132648 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb: 3.8 GiB, 4025483264 bytes, 7862272 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x00000000
+
+Device     Boot Start     End Sectors  Size Id Type
+/dev/sdb1  *     2048 7862271 7860224  3.8G  e W95 FAT16 (LBA)
+
+
+
+##################################
+
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ dmesg
+
+[ 8506.713602]  sdb: sdb1
+
+10. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ umount /dev/sdb1
+
+11. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ sudo dd if=/dev/zero of=/dev/peripherique bs=1024 count=1024
+
+
+
+#######
+formatage rapide on remplie juste la première case avecc des zeros 
+12.  
+
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ sudo cfdisk /dev/sdb1
+
+###################################################################
+                              Disk: /dev/sdb1
+                Size: 3.8 GiB, 4024434688 bytes, 7860224 sectors
+                       Label: dos, identifier: 0x00000000
+
+    Device        Boot       Start        End    Sectors     Size   Id Type
+>>  Free space                2048    7860223    7858176     3.8G               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           [   New  ]  [  Quit  ]  [  Help  ]  [  Write ]  [  Dump  ]
+
+
+                      Create new partition from free space
+
+1024+0 records in
+1024+0 records out
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0018239 s, 575 MB/s
+
+
+
+#############################################################################""
+
+La création de la nouvelle partition 
+
+   Disk: /dev/sdb1
+                Size: 3.8 GiB, 4024434688 bytes, 7860224 sectors
+                       Label: dos, identifier: 0x00000000
+
+    Device        Boot     Start       End   Sectors   Size  Id Type
+>>  /dev/sdb1p1   *         2048   7860223   7858176   3.8G   e W95 FAT16 (LBA) 
+
+
+
+
+
+
+
+
+
+
+ ┌────────────────────────────────────────────────────────────────────────────┐
+ │Partition type: W95 FAT16 (LBA) (e)                                         │
+ │    Attributes: 80                                                          │
+ └────────────────────────────────────────────────────────────────────────────┘
+     [Bootable]  [ Delete ]  [ Resize ]  [  Quit  ]  [  Type  ]  [  Help  ]
+     [  Write ]  [  Dump  ]
+
+
+
+
+
+13. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ sudo mkfs.vfat -F32 /dev/sdb1 -n boot
+
+14. 
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ cp MLO /media/student/boot
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ cp u-boot.img /media/student/boot
+student@ubuntu:~/Desktop/chahla/lab12/u-boot$ cd
+student@ubuntu:~$ cd /media/student/boot
+student@ubuntu:/media/student/boot$ ls
+MLO  u-boot.img
+
+
+
